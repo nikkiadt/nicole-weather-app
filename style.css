@@ -51,3 +51,16 @@ a:hover {
 .daytemperature {
   font-size: 55px;
 }
+
+.footer {
+  margin: -20px 210px auto;
+}
+
+.footerlink {
+  color: #ff0066;
+  text-decoration: none;
+}
+
+.footerlink:hover {
+  text-decoration: underline;
+}
