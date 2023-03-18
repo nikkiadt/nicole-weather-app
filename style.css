@@ -4,6 +4,11 @@ ul {
   padding: 0px;
 }
 
+img {
+  width: 80px;
+  height: 80px;
+}
+
 a {
   text-decoration: none;
 }
@@ -12,27 +17,23 @@ a:hover {
   text-decoration: underline;
 }
 
-.searchform {
+.search-form {
   margin: 0 0 10px;
 }
 
-.weatherapp {
+.weather-app-wrapper {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.weather-app {
   border: 1px solid #b2b2b2;
   padding: 20px;
-  margin: 30px auto;
-  max-width: 900px;
   border-radius: 10px;
 }
 
-.weathericon {
-  font-size: 70px;
-  text-align: left;
-  top: -20px;
-  position: relative;
-}
-
-.maintemperature {
-  font-size: 70px;
+.main-temperature {
+  font-size: 80px;
   text-align: left;
   top: -20px;
   position: relative;
@@ -40,27 +41,22 @@ a:hover {
 
 .units {
   position: relative;
-  top: -57px;
 }
 
-.dayheading {
+.day-heading {
   font-size: 25px;
   font-weight: 400;
 }
 
-.daytemperature {
+.day-temperature {
   font-size: 55px;
 }
 
-.footer {
-  margin: -20px 210px auto;
-}
-
-.footerlink {
+.footer-link {
   color: #ff0066;
   text-decoration: none;
 }
 
-.footerlink:hover {
+.footer-link:hover {
   text-decoration: underline;
 }

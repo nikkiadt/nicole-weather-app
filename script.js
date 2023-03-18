@@ -15,6 +15,7 @@ function getHours2Digits() {
 let hour = getHours2Digits(now);
 function getMinutes2Digits() {
   return String(now.getMinutes()).padStart(2, "0");
+  mainte;
 }
 let minute = getMinutes2Digits(now);
 let date = document.querySelector("#date");

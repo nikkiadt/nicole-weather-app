@@ -16,100 +16,110 @@
 
   <body>
     <div class="container">
-      <div class="weatherapp">
-        <form class="searchform" id="weather-form">
-          <div class="row">
-            <div class="col-6">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Type a city..."
-                id="search-input"
-              />
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form class="search-form" id="weather-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Type a city..."
+                  id="search-input"
+                />
+              </div>
+              <div class="col-3">
+                <button type="submit" class="form-control btn btn-primary">
+                  Search
+                </button>
+              </div>
+              <div class="col-3">
+                <button
+                  type="button"
+                  class="form-control btn btn-warning"
+                  id="current-location"
+                >
+                  Current location
+                </button>
+              </div>
             </div>
-            <div class="col">
-              <button type="submit" class="form-control btn btn-primary">
-                Search
-              </button>
-            </div>
-            <div class="col">
-              <button
-                type="button"
-                class="form-control btn btn-warning"
-                id="current-location"
-              >
-                Current location
-              </button>
-            </div>
-          </div>
-        </form>
-
-        <h1 id="city-name">Kuressaare</h1>
-        <ul>
-          <li id="date">Sunday 18:00</li>
-          <li id="description">Clear with periodic clouds</li>
-        </ul>
-
-        <div class="row">
-          <div class="col">
-            <span class="maintemperature" id="main-temperature"> 0</span>
-            <span class="units">
-              <a href="#" id="celsius-link">°C</a> |
-              <a href="#" id="fahrenheit-link">°F</a></span
-            >
-          </div>
-          <div class="col">
+          </form>
+          <div class="container">
+            <h1 id="city-name">Kuressaare</h1>
             <ul>
-              <li>
-                <span>Humidity: </span>
-                <span id="humidity">69</span>
-                <span>%</span>
-              </li>
-              <li>
-                <span>Wind: </span>
-                <span id="wind">4</span>
-                <span> m/s</span>
-              </li>
+              <li id="date">Sunday 18:00</li>
+              <li id="description">Clear with periodic clouds</li>
             </ul>
           </div>
-        </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <div class="d-flex weather-temperature">
+                  <img
+                    src="https://icons.iconarchive.com/icons/pelfusion/long-shadow-ios7/512/Weather-icon.png"
+                    alt="Sunny"
+                  />
+                  <span class="main-temperature" id="main-temperature"> 0</span>
+                  <span class="units">
+                    <a href="#" id="celsius-link">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>
+                    <span>Humidity: </span>
+                    <span id="humidity">69</span>
+                    <span>%</span>
+                  </li>
+                  <li>
+                    <span>Wind: </span>
+                    <span id="wind">4</span>
+                    <span> m/s</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-        <div class="row text-center">
-          <div class="col">
-            <div class="dayheading">Monday</div>
-            <div class="daytemperature">⛅️</div>
-            <p>2° / -3°</p>
-          </div>
-          <div class="col">
-            <div class="dayheading">Tuesday</div>
-            <div class="daytemperature">⛅️</div>
-            <p>2° / 0°</p>
-          </div>
-          <div class="col">
-            <div class="dayheading">Wednesday</div>
-            <div class="daytemperature">☁️</div>
-            <p>2° / 0°</p>
-          </div>
-          <div class="col">
-            <div class="dayheading">Thursday</div>
-            <div class="daytemperature">☁️</div>
-            <p>2° / 0°</p>
-          </div>
-          <div class="col">
-            <div class="dayheading">Friday</div>
-            <div class="daytemperature">🌨</div>
-            <p>2° / -1°</p>
+          <div class="row text-center">
+            <div class="col">
+              <div class="day-heading">Monday</div>
+              <div class="day-temperature">⛅️</div>
+              <p>2° / -3°</p>
+            </div>
+            <div class="col">
+              <div class="day-heading">Tuesday</div>
+              <div class="day-temperature">⛅️</div>
+              <p>2° / 0°</p>
+            </div>
+            <div class="col">
+              <div class="day-heading">Wednesday</div>
+              <div class="day-temperature">☁️</div>
+              <p>2° / 0°</p>
+            </div>
+            <div class="col">
+              <div class="day-heading">Thursday</div>
+              <div class="day-temperature">☁️</div>
+              <p>2° / 0°</p>
+            </div>
+            <div class="col">
+              <div class="day-heading">Friday</div>
+              <div class="day-temperature">🌨</div>
+              <p>2° / -1°</p>
+            </div>
           </div>
         </div>
+        <small>
+          <a
+            href="https://github.com/nikkiadt/nicole-weather-app"
+            target="_blank"
+            class="footer-link"
+            >Check out my GitHub repository!</a
+          >
+        </small>
       </div>
-      <p class="footer">
-        <a
-          href="https://github.com/nikkiadt/nicole-weather-app"
-          target="_blank"
-          class="footerlink"
-          >Check out my GitHub repository!</a
-        >
-      </p>
     </div>
   </body>
 
