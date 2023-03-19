@@ -1,3 +1,5 @@
+let apiKey = "cbe4bc31a43ff3543at23227e11o06d3";
+
 function formatDate() {
   let date = new Date();
   let hours = date.getHours();
@@ -58,7 +60,22 @@ function handleSubmit(event) {
 
 function searchCity(city) {
   let units = "metric";
-  let apiKey = "cbe4bc31a43ff3543at23227e11o06d3";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
+}
+
+searchCity("New York");
+
+let locationButton = document.querySelector("#current-location");
+locationButton.addEventListener("click", getCurrentLocation);
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(userPosition);
+}
+
+function userPosition(position) {
+  let units = "metric";
+  let positionUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&key=${apiKey}`;
+  axios.get(positionUrl).then(displayWeather);
 }
