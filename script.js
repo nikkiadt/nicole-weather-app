@@ -1,5 +1,6 @@
 let apiKey = "cbe4bc31a43ff3543at23227e11o06d3";
 let units = "metric";
+let city = "Singapore";
 
 function formatDate() {
   let date = new Date();
@@ -26,7 +27,9 @@ function formatDate() {
 
 function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.city;
-
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.time * 1000
+  );
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
   document.querySelector("#main-temperature").innerHTML = Math.round(
@@ -37,10 +40,16 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#date").innerHTML = formatDate(
-    response.data.time * 1000
-  );
+  document
+    .querySelector("#weather-icon")
+    .setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
+  document
+    .querySelector("#weather-icon")
+    .setAttribute("alt", response.data.condition.description);
 }
 
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query="Paris"&key=${apiKey}`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 axios.get(apiUrl).then(displayWeather);
