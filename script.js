@@ -24,15 +24,15 @@ function formatDate() {
 }
 
 function displayWeather(response) {
+  celsiusTemperature = response.data.temperature.current;
   document.querySelector("#city-name").innerHTML = response.data.city;
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
-  document.querySelector("#main-temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  document.querySelector("#main-temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -50,13 +50,11 @@ function displayWeather(response) {
 }
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
+searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
   let city = document.getElementById("search-input").value;
   searchCity(city);
-}
+});
 
 function searchCity(city) {
   let units = "metric";
@@ -64,18 +62,34 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-searchCity("New York");
+let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  document.querySelector("#main-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+});
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  document.querySelector("#main-temperature").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
+});
 
 let locationButton = document.querySelector("#current-location");
-locationButton.addEventListener("click", getCurrentLocation);
-
-function getCurrentLocation(event) {
+locationButton.addEventListener("click", function (event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(userPosition);
-}
+});
 
 function userPosition(position) {
   let units = "metric";
   let positionUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&key=${apiKey}`;
   axios.get(positionUrl).then(displayWeather);
 }
+
+searchCity("New York");
