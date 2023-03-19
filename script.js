@@ -1,7 +1,3 @@
-let apiKey = "cbe4bc31a43ff3543at23227e11o06d3";
-let units = "metric";
-let city = "Singapore";
-
 function formatDate() {
   let date = new Date();
   let hours = date.getHours();
@@ -51,5 +47,18 @@ function displayWeather(response) {
     .setAttribute("alt", response.data.condition.description);
 }
 
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-axios.get(apiUrl).then(displayWeather);
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.getElementById("search-input").value;
+  searchCity(city);
+}
+
+function searchCity(city) {
+  let units = "metric";
+  let apiKey = "cbe4bc31a43ff3543at23227e11o06d3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeather);
+}
