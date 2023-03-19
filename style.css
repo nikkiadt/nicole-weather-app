@@ -4,7 +4,7 @@ ul {
   padding: 0px;
 }
 
-li::first-letter {
+li:first-letter {
   text-transform: capitalize;
 }
 
@@ -41,6 +41,15 @@ a:hover {
   height: 75px;
 }
 
+.weather-temperature .active {
+  cursor: default;
+  color: black;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 .main-temperature {
   font-size: 80px;
   text-align: left;
@@ -48,7 +57,7 @@ a:hover {
   position: relative;
 }
 
-.units {
+.weather-temperature .units {
   position: relative;
 }
 
