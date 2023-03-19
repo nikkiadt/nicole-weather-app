@@ -4,9 +4,8 @@ ul {
   padding: 0px;
 }
 
-img {
-  width: 80px;
-  height: 80px;
+li::first-letter {
+  text-transform: capitalize;
 }
 
 a {
@@ -32,10 +31,20 @@ a:hover {
   border-radius: 10px;
 }
 
+.overview {
+  margin-bottom: 20px;
+}
+
+.weather-temperature img {
+  margin-right: 10px;
+  width: 75px;
+  height: 75px;
+}
+
 .main-temperature {
   font-size: 80px;
   text-align: left;
-  top: -20px;
+  top: -25px;
   position: relative;
 }
 
