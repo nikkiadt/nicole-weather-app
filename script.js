@@ -24,7 +24,7 @@ function formatDate() {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayWeatherConditions(response) {
+function displayWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.city;
 
   document.querySelector("#description").innerHTML =
@@ -43,4 +43,4 @@ function displayWeatherConditions(response) {
 }
 
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query="Paris"&key=${apiKey}`;
-axios.get(apiUrl).then(displayWeatherConditions);
+axios.get(apiUrl).then(displayWeather);
