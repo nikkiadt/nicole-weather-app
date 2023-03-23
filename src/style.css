@@ -61,13 +61,22 @@ a:hover {
   position: relative;
 }
 
-.day-heading {
-  font-size: 25px;
-  font-weight: 400;
+.weather-forecast {
+  text-align: center;
+  color: #000000;
 }
 
-.day-temperature {
-  font-size: 55px;
+.weather-forecast-date {
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 15px;
+}
+
+.weather-forecast-temperatures-min {
+  opacity: 0.5;
 }
 
 .footer-link {
